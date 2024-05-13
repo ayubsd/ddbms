@@ -1,0 +1,28 @@
+
+in my sql command prompt-alter user 'root'@'localhost' identified with mysql_native_password by 'password';
+
+import mysql.connector as sql
+
+db=sql.connect(host='localhost',
+               user='root',
+               password='@123',
+               auth_plugin='mysql_native_password')
+print(db.connection_id)
+
+cursor=db.cursor()
+
+cursor.execute("use student") //database name
+
+# Function to execute SQL queries
+def execute_query(query):
+    cursor.execute(query)
+    rows = cursor.fetchall()
+
+    print("Answer of Executed Query : ")
+    print("="*130)
+    for row in rows:
+        print(row)
+    print("="*130)
+   
+execute_query(f"select * from society where totalSeats > {num};") //query
+    
