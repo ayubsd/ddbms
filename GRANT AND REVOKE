@@ -1,0 +1,15 @@
+YE SAB MYSQL COMMAND LINE PR KRNA H
+select user();
+create user 'u'@'localhost' identified by 'ii';  //password-ii
+----------------------------to give grant----------------------------
+show grants for 'u'@'localhost';
+grant select on *.* to 'u'@'localhost';
+show grants for 'u'@'localhost';
+------------------------to check grant---------------------------
+system mysql -u u -p    //password-ii
+use student;            //name of database
+select * from student;    //qurey
+=======================to revoke===============================
+ system mysql -u root -p
+show grants for 'u'@'localhost';
+ revoke select on *.* from 'u'@'localhost';
