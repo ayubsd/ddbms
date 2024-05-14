@@ -1,4 +1,4 @@
-
+pip install mysql-connector-python
 in my sql command prompt-alter user 'root'@'localhost' identified with mysql_native_password by 'password';
 
 import mysql.connector as sql
